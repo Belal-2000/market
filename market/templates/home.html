@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Welcome to market simulator..</h1>
+            <p>You can buy or sell products here with started budget of 1000$ !!</p>
+            <p><a class="btn btn-primary btn-lg" href="{{ url_for('market') }}" role="button">Get started &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+
+
+</main>
+
+{% endblock %}

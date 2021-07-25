@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Regester
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+
+    <form action="#" method="POST" class="form-signin" style="color: white;margin-top: 20px; line-height: 1.8em;">
+        {{ form.hidden_tag() }}
+        <img src="{{ url_for('static' , filename = 'im.jpg') }}"
+            style="height: 150; width: 150px;border-radius: 25px; margin-bottom: 20px;">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Please log in
+        </h1>
+
+
+        {{ form.username.label() }}
+        {{ form.username(class = 'form-control' , placeholder = 'User name') }}
+
+        {{ form.password.label() }}
+        {{ form.password(class = 'form-control' , placeholder = 'User name') }}
+
+        <div class="checkbox mb-3" style="margin-top: 20px;">
+            <h6>Do not have an account?</h6>
+            <a href="{{ url_for('regester') }}" class="btn btn-sm btn-secondary">
+                Regester
+            </a>
+        </div>
+
+        {{ form.submit(class= 'btn btn-lg btn-primary btn-block' , style = 'width:50% ; margin: 30px
+        auto')
+        }}
+</div>
+
+{% endblock %}

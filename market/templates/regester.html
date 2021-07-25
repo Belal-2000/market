@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Regester
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+    <form action="#" method="POST" class="form-register" style="color: white;margin-top: 20px; line-height: 1.8em;">
+        {{ form.hidden_tag() }}
+        <img src="{{ url_for('static' , filename = 'im.jpg') }}"
+            style="height: 150; width: 150px;border-radius: 25px; margin-bottom: 20px;">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Please Create Your Account
+        </h1>
+
+
+        {{ form.username.label() }}
+        {{ form.username(class = 'form-control' , placeholder = 'User name') }}
+
+        {{ form.email.label() }}
+        {{ form.email(class = 'form-control' , placeholder = 'Emial') }}
+
+        {{ form.password1.label() }}
+        {{ form.password1(class = 'form-control' , placeholder = 'Password') }}
+
+        {{ form.password2.label() }}
+        {{ form.password2(class = 'form-control' , placeholder = 'Confirm password') }}
+
+        <br>
+
+        <div class="checkbox mb-3" style="margin-top: 0px;">
+            <h6>Alredy have an account ? sign in from here :</h6>
+            <a href="{{ url_for('login') }}" class="btn btn-sm btn-secondary">
+                Sign in
+            </a>
+        </div>
+
+        {{ form.submit(class = 'btn btn-lg btn-primary btn-block', style = 'width:50% ; margin: 10px
+        auto') }}
+
+    </form>
+
+</div>
+
+{% endblock %}
